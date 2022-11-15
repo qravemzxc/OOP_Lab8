@@ -27,7 +27,23 @@ namespace Lab8
         public string nameLang3 { get; set; }
         public int versionLang3 = 3;
         public string[] optArr3 { get; set; }
-
+        public Programmer(string nameLang, int versionLang)
+        {
+            nameLang1 = nameLang;
+            versionLang1 = versionLang;
+            optArr1 = new string[] {"coding","compiling" };
+        }
+        public Programmer(int versionLang, string nameLang)
+        {
+            nameLang2 = nameLang;
+            versionLang2 = versionLang;
+            optArr2 = new string[] { "compiling"};
+        }
+        public Programmer(string nameLang)
+        {
+            nameLang3 = nameLang;
+            optArr3 = new string[] { "coding", "compiling" };
+        }
         static LambdaMessage mes1 = () => Console.WriteLine("Имя какого языка хотите изменить?");
         static LambdaMessage mes2 = () => Console.WriteLine("Версию какого языка хотите изменить?");
         static LambdaMessage mes3 = () => Console.WriteLine("Для какого языка хотите добавить новые функции?");
@@ -233,7 +249,7 @@ namespace Lab8
             Predicate<string> isPositive = (string str1) => str1!=str;
             Console.WriteLine($"Строка изменена?{isPositive(str1)}");
         }
-        public static void DoOperation(string str,Action<string> op) => op(str);
+      
  
     }
     class Program
